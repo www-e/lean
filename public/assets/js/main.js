@@ -14,7 +14,7 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
     document.documentElement.classList.remove('dark');
 }
 
-themeToggleBtn.addEventListener('click', function() {
+themeToggleBtn.addEventListener('click', function () {
     // toggle icons inside button
     themeToggleDarkIcon.classList.toggle('hidden');
     themeToggleLightIcon.classList.toggle('hidden');
@@ -28,7 +28,7 @@ themeToggleBtn.addEventListener('click', function() {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
         }
-    // if NOT set via local storage previously
+        // if NOT set via local storage previously
     } else {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
@@ -42,7 +42,7 @@ themeToggleBtn.addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOM fully loaded. Firing accordion script.");
-    
+
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     console.log(`Found ${accordionHeaders.length} accordion headers.`);
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`Attaching listener to header ${index + 1}.`);
         header.addEventListener('click', () => {
             console.log(`Click detected on header ${index + 1}.`);
-            
+
             const accordionPanel = header.nextElementSibling;
             const arrowIcon = header.querySelector('svg');
 
