@@ -39,3 +39,23 @@ themeToggleBtn.addEventListener('click', function() {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOM fully loaded. Firing accordion script.");
+    
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    console.log(`Found ${accordionHeaders.length} accordion headers.`);
+
+    accordionHeaders.forEach((header, index) => {
+        console.log(`Attaching listener to header ${index + 1}.`);
+        header.addEventListener('click', () => {
+            console.log(`Click detected on header ${index + 1}.`);
+            
+            const accordionPanel = header.nextElementSibling;
+            const arrowIcon = header.querySelector('svg');
+
+            accordionPanel.classList.toggle('hidden');
+            arrowIcon.classList.toggle('rotate-180');
+        });
+    });
+});

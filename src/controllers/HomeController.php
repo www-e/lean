@@ -1,15 +1,16 @@
 <?php
 
-// (c) 2024 Your Academy Name
-// Home Page Controller
+// We must 'use' the models we need at the top of the file.
+use App\Models\Course;
 
 class HomeController {
     public function index() {
-        // Business logic goes here. For now, we're just setting a title.
+        // Business logic: get all courses from the database using our Eloquent model.
+        $courses = Course::all(); // This one line replaces all our previous query builder logic!
+        
         $pageTitle = "Welcome to the Academy";
 
-        // This is how we load a view. We'll create a helper function for this later.
-        // For now, we just require the file directly.
+        // Now we load the view and pass the $courses data to it.
         require '../src/views/pages/home.php';
     }
 }

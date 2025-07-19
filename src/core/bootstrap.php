@@ -2,6 +2,7 @@
 
 // (c) 2024 Your Academy Name
 // Application Bootstrap
+session_start(); // START SESSIONS
 
 // 1. Load Composer's autoloader
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -15,14 +16,14 @@ $capsule = new Capsule;
 // 4. Configure the database connection
 $capsule->addConnection([
     'driver'    => 'mysql',
-    // --- UPDATE WITH YOUR HOSTINGER DATABASE DETAILS ---
+    // --- UPDATE WITH YOUR LOCAL XAMPP DETAILS ---
     'host'      => 'localhost',
-    'database'  => 'your_database_name',
-    'username'  => 'your_database_username',
-    'password'  => 'your_database_password',
+    'database'  => 'leanplatform_db', // The name you chose in phpMyAdmin
+    'username'  => 'root',            // XAMPP default username
+    'password'  => '',                // XAMPP default password is empty
     // ----------------------------------------------------
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
+    'charset'   => 'utf8mb4',
+    'collation' => 'utf8mb4_general_ci',
     'prefix'    => '',
 ]);
 
